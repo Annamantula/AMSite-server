@@ -4,9 +4,13 @@ const nodemailer = require('nodemailer');
 const bodyParser = require('body-parser');
 const morgan = require('morgan');
 
-
 const app = express();
 const port = process.env.PORT || 3000;
+
+// 'port' variable:
+app.listen(port, () => {
+  console.log(`Server is running on port ${port}`);
+});
 
 // Middleware to parse JSON and url-encoded data
 app.use(bodyParser.json());
