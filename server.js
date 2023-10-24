@@ -24,7 +24,7 @@ const transporter = nodemailer.createTransport({
 });
 
 // Define a route to handle form submissions
-app.post('/#contacts', (req, res) => {
+app.post('/send-email', (req, res) => {
   const { name, email, message } = req.body;
   const mailOptions = {
     from: 'anya.mantula@hotmail.com',
