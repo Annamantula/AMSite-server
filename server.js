@@ -22,6 +22,9 @@ app.use((err, req, res, next) => {
   res.status(500).send('Something broke!');
 });
 app.use(helmet());
+app.get('/', (req, res, next) => {
+  res.json({msg:"API Working"});
+})
 
 
 // Create a Nodemailer transporter
