@@ -37,8 +37,15 @@ app.get('/', (req, res, next) => {
   res.json({msg:"API Working"});
 })
 // Define a route to handle form submissions
-app.post('/send-email', (req, res) => {
-  res.json({msg:"send email path"});
+app.post('/send-email', async(req, res,next) => {
+  try{
+    res.json({msg:"send email path"});
+
+  }catch(error) {
+    next(error)
+}
+})
+  
   // const { name, email, message } = req.body;
   // const mailOptions = {
   //   from: 'anya.mantula@hotmail.com',
@@ -56,4 +63,4 @@ app.post('/send-email', (req, res) => {
   //     res.status(200).json({ success: true, message: 'Email sent successfully.'});
   //   }
   // });
-});
+// });
